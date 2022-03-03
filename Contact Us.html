@@ -1,0 +1,147 @@
+<?php
+include 'php/connect.php';
+?>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link href="styles.CSS.css" rel="stylesheet">
+</head>
+<body>
+<!-- Logo -->
+<div>
+    <img src="Images/logo.png" alt="Logo" class="logo">
+</div>
+<!-- Page Header -->
+<header>
+    <div>
+        <div class="center">
+            <h1>CONTACT US</h1>
+        </div>
+        <hr>
+        <nav>
+            <div class="navigation">
+                <a href="index.html"><b>HOME</b></a>
+                <a href="about%20us.html"><b>ABOUT US</b></a>
+                <a href="Contact%20Us.html"><b>CONTACT</b></a>
+            </div>
+        </nav>
+    </div>
+</header>
+    <hr>
+<!-- Page Content -->
+<div class="paragraph">
+    <p>As the originators of some of the world’s most luxurious and satisfying automobiles, we strive to have our customers totally satisfied with <br>their purchases and overall ownership experience. As a result, you will find the same attention to detail that goes into the sales pitch also applies to you and your degree of total satisfaction.</p>
+<br>
+</div>
+    <div>
+        <br>
+        <br>
+        <script>
+            function checkForm() {
+                //Object representation of input field studentNumber = document.forms["testform"]["studentno"]
+                var firstname = document.forms["testform"]["fname"];
+                var age = document.forms["testform"]["age"];
+                var lastname = document.forms["testform"]["lname"];
+                var emailaddress = document.forms["testform"]["eaddress"];
+                var phonenumber = document.forms["testform"]["pnumber"];
+                var dateoftestdrive = document.forms["testform"]["dateoftestdrive"];
+                var carID = document.forms["testform"]["carID"];
+                var errs = "";
+
+                firstname.style.background = "white";
+                age.style.background = "white";
+                lastname.style.background = "white";
+                emailaddress.style.background = "white";
+                phonenumber.style.background = "white";
+                dateoftestdrive.style.background = "white";
+                carID.style.background = "white";
+
+                if ((firstname.value == null) || (firstname.value == "")) {
+                    errs += " - All details must be entered \n";
+                    firstname.style.background = "red";
+                }
+
+                if ((age.value == null) || (age.value == "")) {
+                    errs += " - All details must be entered \n";
+                    age.style.background = "red";
+                }
+                if ((lastname.value == null) || (lastname.value == "")) {
+                    errs += " - All details must be entered \n";
+                    age.style.background = "red";
+                }
+                if ((emailaddress.value == null) || (emailaddress.value == "")) {
+                    errs += " - All details must be entered \n";
+                    age.style.background = "red";
+                }
+                if ((phonenumber.value == null) || (phonenumber.value == "")) {
+                    errs += " - All details must be entered \n";
+                    age.style.background = "red";
+                }
+                if ((dateoftestdrive.value == null) || (dateoftestdrive.value == "")) {
+                    errs += " - All details must be entered \n";
+                    age.style.background = "red";
+                }
+                if ((carID.value == null) || (carID.value == "")) {
+                    errs += " - All details must be entered \n";
+                    age.style.background = "red";
+                }
+
+                if (isNaN(age.value)) {
+                    errs += " - Age must be a number!";
+                    age.style.background = "red";
+                }
+                if (isNaN(phonenumber.value)) {
+                    errs += " - Phone number must be a number!";
+                    age.style.background = "red";
+                }
+
+                if (errs != "") {
+                    console.log(errs)
+                    return false;
+                }
+
+                return true;
+
+            }
+        </script>
+        <!-- "php/connect.php" -->
+        <form action="insert.php" name= "testform" method="post" onsubmit="return checkForm()">
+            <h3 class="h3">Submission Form For Test Drive</h3>
+            <div class="submit">
+                <label for="firstname">First Name:</label><br>
+                <input type="text" name="fname" id="firstname" placeholder="John"><br>
+            </div>
+            <div class="submit">
+                <label for="lastname">Last Name: </label><br>
+                <input type="text" name="lname" id="lastname" placeholder="Walker"><br>
+            </div>
+            <div class="submit">
+                <label for="age">Age:</label><br>
+                <input type="text" name="age" id="age" placeholder="21"><br>
+            </div>
+            <div class="submit">
+                <label for="emailaddress">Email Address: </label><br>
+                <input type="text" name="eaddress" id="emailaddress" placeholder="aaa@gmail.com"><br>
+            </div>
+            <div class="submit">
+                <label for="phonenumber">Phone Number: </label><br>
+                <input type="text" name="pnumber" id="phonenumber" placeholder="01632 960320"><br>
+            </div>
+            <input class="submitbutton" type="submit" value="Submit">
+        </form>
+    </div>
+<!-- Footer-->
+<br>
+<br>
+<br>
+<hr>
+<div>
+    <p style="color: black"> <b>FOLLOW MOTOR HUB</b></p>
+</div>
+</body>
+</html>

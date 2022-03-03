@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Motor Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link href="styles.CSS.css" rel="stylesheet">
+</head>
+<body>
+<!-- Logo -->
+<div>
+    <img src="Images/logo.png" alt="Logo" class="logo">
+</div>
+<!-- Page Header -->
+<header>
+    <div>
+        <div class="center">
+            <h1>MOTOR HUB</h1>
+        </div>
+        <hr>
+        <nav>
+            <div class="navigation">
+                <?php //include 'header.php';?>
+                <a href="index.html"><b>HOME</b></a>
+                <a href="about%20us.html"><b>ABOUT US</b></a>
+                <a href="Contact%20Us.html"><b>CONTACT</b></a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Page Content -->
+<hr>
+    <div>
+        <img src="https://hips.hearstapps.com/amv-prod-gp.s3.amazonaws.com/gearpatrol/wp-content/uploads/2019/10/Buy-a-Kia-Telluride-Instead-gear-patrol-slide-1.jpg?crop=1.00xw:0.754xh;0,0.124xh&resize=980:*" alt="Kia Telluride" style="width:1890px;height:1100px;border:15px white;"/>
+        <div id="font" class="text">
+            <p><b><font size="+2">NOW AVAILABLE</font></b> <br><font size="+1"> CONTACTLESS TEST DRIVE</font> <br> Book your contactless test drive now, so you can simply enjoy your ride</p></div>
+        <form method="get" action="Contact%20Us.html">
+            <button class="contact">CONTACT US</button>
+        </form>
+    </div>
+<!-- Footer-->
+<hr>
+<div>
+    <p style="color: black"> <b>FOLLOW MOTOR HUB</b></p>
+</div>
+<div>
+    <button id="myBtn">Date & Time</button>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("myBtn").onclick = displayDate;
+
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        }
+    </script>
+</script>
+</div>
+</body>
+</html>
+
