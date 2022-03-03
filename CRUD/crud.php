@@ -1,3 +1,21 @@
+<?php
+
+include 'connect.php';
+
+$sql = "SELECT * FROM f_customertable";
+$exec=mysqli_query($conn, $sql);
+  if(mysqli_num_rows($exec)>0){
+    $row= mysqli_fetch_all($exec, MYSQLI_ASSOC);
+    echo $row; 
+  }else{
+    echo "database is empty";
+  }
+
+$conn->close();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
