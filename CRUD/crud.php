@@ -1,24 +1,23 @@
-<?php
-
-include 'connect.php';
-
-$sql = "SELECT * FROM f_customertable";
-$exec=mysqli_query($conn, $sql);
-  if(mysqli_num_rows($exec)>0){
-    $row= mysqli_fetch_all($exec, MYSQLI_ASSOC);
-    echo $row; 
-  }else{
-    echo "database is empty";
-  }
-
-$conn->close();
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+
+    include '../connect.php';
+
+    $sql = "SELECT * FROM f_customertable";
+    $exec=mysqli_query($conn, $sql);
+    $row= [];
+    if(mysqli_num_rows($exec)>0){
+        $row= mysqli_fetch_all($exec, MYSQLI_ASSOC);
+       echo json_encode($row);
+    }else{
+        echo "database is empty";
+    }
+
+    $conn->close();
+
+    ?>
     <meta charset="UTF-8">
     <title>My Records</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,11 +85,13 @@ $conn->close();
     var crudApp = new function () {
 
         // AN ARRAY OF OBJECTS WITH VALUES.
-        this.myRecords = [
+        /* this.myRecords = [
             {ID: '1', First_Name: 'Kyle', Last_Name: 'Humphries', Age: '22', Email_Address: 'kyle@gmail.com', Phone_Number: '7946861458',  Car_ID: '#2'},
             {ID: '2', First_Name: 'Kyle', Last_Name: 'Humphries', Age: '22', Email_Address: 'kyle@gmail.com', Phone_Number: '7946861458',  Car_ID: '#2'},
             {ID: '3', First_Name: 'Kyle', Last_Name: 'Humphries', Age: '22', Email_Address: 'kyle@gmail.com', Phone_Number: '7946861458',  Car_ID: '#2'}
-        ]
+        ] */
+        <?php echo $row ?>
+        this.myRecords = <?php echo json_encode($row); ?>
         this.category = ['#1', '#2', '#3', '#4'];
         this.col = [];
 
